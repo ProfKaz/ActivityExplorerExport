@@ -403,7 +403,7 @@ function MainFunction
 	Write-Host "`n`nYou will be prompted for your credentials, remember that you need Compliance Administrator role"
 	Write-Host "Press any key to continue..."
     $key = ([System.Console]::ReadKey($true))
-	#connect2service
+	connect2service
 	
 	#Call function to export data from Activity Explorer
 	GetActivityExplorerData -StartingTime $strt -EndingTime $end -ExportFormat $ExportFormat -ExportFolder $ExportFolderName -Activities $ListOfActivities
