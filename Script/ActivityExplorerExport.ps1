@@ -276,7 +276,7 @@ function GetActivityExplorerData($StartingTime, $EndingTime, $ExportFormat, $Exp
 
 		if($ExportFormat -eq "Csv")
 		{
-			$cmdletused = "Export-ActivityExplorerData -StartTime $StartingTime -EndTime $EndingTime -PageSize $InitialPageSize-OutputFormat $ExportFormat"
+			$cmdletused = "Export-ActivityExplorerData -StartTime $StartingTime -EndTime $EndingTime -PageSize $InitialPageSize -OutputFormat $ExportFormat"
 			$CSVresults = $TotalResults.ResultData
 			WriteToCsv -results $CSVresults -ExportFolder $ExportFolder -Activity $Activity -date $date -cmdlet $cmdletused
 			Write-Host $CSVresults -ForeGroundColor Red
