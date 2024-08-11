@@ -228,22 +228,6 @@ function ReadListOfWorkloads
 	return $WorkloadList
 }
 
-function SelectContinuity
-{
-	$choices  = '&Yes','&No'
-	$decision = $Host.UI.PromptForChoice("", "`nDo you want to export more data? ", $choices, 1)
-	
-	if ($decision -eq 0)
-    {
-		MainFunction
-	}
-	if ($decision -eq 1)
-	{
-		exit
-	}
-	
-}
-
 function Build-Signature ($customerId, $sharedKey, $date, $contentLength, $method, $contentType, $resource) 
 {
     # ---------------------------------------------------------------   
@@ -416,35 +400,35 @@ function ActivityExplorerHelp
 	Write-Host "################################################################################" -ForegroundColor Green
 	Write-Host "`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "This menu"
-	Write-Host ".\ActivityExplorerExport.ps1 -Help" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -Help" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "Using only the script by default, you'll be able to capture and calculate data from the past 24 hours, based on the exact time of execution."
-	Write-Host ".\ActivityExplorerExport.ps1" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "With this next execution, you'll be able to capture and calculate data from the past X days, based on the exact time of execution"
-	Write-Host ".\ActivityExplorerExport.ps1 -PastDays 31" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -PastDays 31" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "This script uses a configuration file located in the same folder as the script. The file, called ActivityExplorerActivitiesSelector.json, contains"
 	Write-Host "a list of common activities and is used by default with the values set to 'True.' It's possible that some activities are not listed; you can manually add those."
 	Write-Host "If the file is not present, the script will take all possible activities. Alternatively, you can use the '-NotApplyFilters' attribute to retrieve all activities."
-	Write-Host ".\ActivityExplorerExport.ps1 -NotApplyFilters" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -NotApplyFilters" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "You can request a specific time frame for data retrieval. For example, to get all the data for June 18, 2024, you can set the desired interval."
 	Write-Host "This can be a short interval or an extended period spanning several days."
-	Write-Host ".\ActivityExplorerExport.ps1 -UseCustomParameters -AEStartTime '"'06/18/2024 00:00:00'"' -AEEndTime '"'06/18/2024 23:59:59'"'" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -UseCustomParameters -AEStartTime '"'06/18/2024 00:00:00'"' -AEEndTime '"'06/18/2024 23:59:59'"'" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "If you are not comfortable working with JSON format, you can use the attribute '-ExportToCsv' to export the data in CSV format."
-	Write-Host ".\ActivityExplorerExport.ps1 -ExportToCsv" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -ExportToCsv" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "If you want to store your data in Logs Analytics you can use the attribute '-ExportToLogsAnalytics'."
-	Write-Host ".\ActivityExplorerExport.ps1 -ExportToLogsAnalytics" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -ExportToLogsAnalytics" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "The PowerShell cmdlet used in this script supports a maximum Page Size of 5,000, which is the default value. However, if you want to change this Page Size,"
 	Write-Host "you can use the attribute -InitialPageSize and set a smaller value."
-	Write-Host ".\ActivityExplorerExport.ps1 -InitialPageSize 300" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -InitialPageSize 300" -ForeGroundColor DarkYellow
 	Write-Host "`n`nDescription: " -ForegroundColor Blue -NoNewLine
 	Write-Host "You can combine different attributes available in the script to customize its functionality. For example:"
-	Write-Host ".\ActivityExplorerExport.ps1 -NotApplyFilters -PastDays 15" -ForeGroundColor DarkYellow
+	Write-Host ".\ActivityExplorerExport2.ps1 -NotApplyFilters -PastDays 15" -ForeGroundColor DarkYellow
 	Write-Host "`n"
 	Write-Host "### You can now proceed using any of the options listed in the Help menu. ###" -ForegroundColor Green
 	Write-Host "`n"
@@ -764,14 +748,13 @@ function MainFunction
 	Write-Host "`n`nYou will be prompted for your credentials, remember that you need Compliance Administrator role"
 	Write-Host "Press any key to continue..."
     $key = ([System.Console]::ReadKey($true))
-	#connect2service
+	connect2service
 	
 	Write-Host "Calling script..."
 	
 	#Call function to export data from Activity Explorer
 	GetActivityExplorerData -StartingTime $strt -EndingTime $end -ExportFormat $ExportFormat -ExportFolder $ExportFolderName -Activities $ListOfActivities -Workloads $ListOfWorkloads -ExportOption $ExportOption
 	
-	#SelectContinuity
 }
 
 if($Help)
