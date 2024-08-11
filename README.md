@@ -122,7 +122,6 @@ Ways to use the script:
 ```
 .\ActivityExplorerExport2.ps1 -NotApplyFilters -PastDays 15
 ```
-</details>
 <br>  
 <br> 
 
@@ -130,7 +129,6 @@ Ways to use the script:
 ```
 .\ActivityExplorerExport2.ps1 -ExportToLogsAnalytics -PastDays 15
 ```
-</details>
 <br>  
 <br> 
 
@@ -138,7 +136,6 @@ Ways to use the script:
 ```
 .\ActivityExplorerExport2.ps1 -WorkloadsFilter -PastDays 15
 ```
-</details>
 <br>  
 <br> 
 
@@ -149,6 +146,7 @@ Ways to use the script:
 </details>
 <br>  
 <br> 
+
 
 When the script is executed, a summary will be displayed in the console, showing the configuration settings for that execution.
 ![image](https://github.com/user-attachments/assets/05d84980-8af5-44f4-94db-fa2bf00cfdc3)
