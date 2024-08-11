@@ -7,7 +7,7 @@ Ways to use the script:
 > **NOTES**
 >
 >  **By default**, the data is exported in JSON format to a folder named **"ExportedData."** This folder is automatically created in the same directory where the script is executed, if it doesn't already exist.
-> **By default**, The configuration file called **"ActivityExplorerActivitiesSelector.json"** contains a list of 26 activities. This list is manually created and may not be complete. The file is provided to help focus on specific activities, such as **"DLPRuleMatch"** or **"LabelApplied"**. By default, all values are set to "True." You can set any activities you don't want to "False."
+> **By default**, The configuration file called **"ActivityExplorerActivitiesSelector.json"** contains a list of 28 activities. This list is manually created and may not be complete. The file is provided to help focus on specific activities, such as **"DLPRuleMatch"** or **"LabelApplied"**. By default, all values are set to "True." You can set any activities you don't want to "False."
 > If the configuration file is not present when the script is executed, it will include all possible activities. You can achieve the same result by using the **"-NotApplyFilters"** attribute. Additionally, this configuration file can be edited to add new activities as needed.
 <br>  
 <br>  
