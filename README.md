@@ -66,6 +66,10 @@ Ways to use the script:
 <br> 
 
 ## How to execute ActivityExplorerExport version 2 script
+
+> [!TIP]
+> A zip file was added to the folder Script2.0, to simplify the process to donwload the files required. Or you can download manually the files.
+
 <details>
 <summary>How to execute ActivityExplorerExport2</summary>
 
