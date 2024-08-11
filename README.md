@@ -145,7 +145,7 @@ Ways to use the script:
 
 💠**Description:** Using `-FilterOnlyByWorkloads` in this case all the activities are required for specific workloads, previously set in the configuration file.
 ```
-.\ActivityExplorerExport2.ps1 -WorkloadsFilter -PastDays 15
+.\ActivityExplorerExport2.ps1 -FilterOnlyByWorkloads -PastDays 15
 ```
 </details>
 <br>  
