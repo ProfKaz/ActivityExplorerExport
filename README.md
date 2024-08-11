@@ -153,5 +153,6 @@ Ways to use the script:
 
 
 When the script is executed, a summary will be displayed in the console, showing the configuration settings for that execution.
-![image](https://github.com/user-attachments/assets/05d84980-8af5-44f4-94db-fa2bf00cfdc3)
+![image](https://github.com/user-attachments/assets/a9398412-8792-4c06-bfb4-dae3f4e84a9a)
+
 
