@@ -1,10 +1,11 @@
 {
-    "Copilot": "True",
-    "Endpoint devices": "True",
-    "Exchange": "True",
-    "MicrosoftTeams": "True",
-    "OneDrive": "True",
-    "OneDriveForBusiness": "True",
-    "PowerBI": "True",
-    "SharePoint": "True"
+    "Copilot" : "True",
+    "Endpoint" : "False",
+    "Exchange" : "False",
+    "OnPremisesFileShareScanner" : "False",
+    "OnPremisesSharePointScanner" : "False",
+    "OneDrive" : "False",
+    "PowerBI" : "False",
+    "PurviewDataMap" : "False",
+    "SharePoint" : "False"
 }
